@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b1o7qfdy8d1j3"]
+
+[node name="Camera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+metadata/_edit_group_ = true
