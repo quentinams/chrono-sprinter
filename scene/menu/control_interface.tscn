@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/menu/control_scene.gd" id="1_2x8dr"]
 [ext_resource type="Texture2D" uid="uid://c64d6ghwsufam" path="res://assets/menu/background.png" id="2_052ir"]
-[ext_resource type="PackedScene" uid="uid://b5pr4vcujixe2" path="res://scene/menu/input_button.tscn" id="3_263dx"]
+[ext_resource type="PackedScene" path="res://scene/menu/input_button.tscn" id="3_263dx"]
 [ext_resource type="FontFile" uid="uid://cvmquumd6um6u" path="res://assets/fonts/Beyonders.ttf" id="4_el1ko"]
 
 [node name="ControlInterface" type="Control"]
@@ -14,19 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2x8dr")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3072.0
-offset_top = -512.0
-offset_right = 3072.0
-offset_bottom = 512.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(3993, 0)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_052ir")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -100,5 +99,5 @@ theme_override_font_sizes/font_size = 11
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

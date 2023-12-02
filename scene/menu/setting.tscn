@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bolvt76yw7q1j"]
+[gd_scene load_steps=4 format=3 uid="uid://bolvt76yw7q1j"]
 
 [ext_resource type="Script" path="res://src/menu/setting.gd" id="1_rb6td"]
 [ext_resource type="AudioStream" uid="uid://cuimubxduhb53" path="res://assets/sounds/main_menu_sound_effect.mp3" id="2_0d3v6"]
+[ext_resource type="Texture2D" uid="uid://c64d6ghwsufam" path="res://assets/menu/background.png" id="2_qtdu7"]
 
 [node name="Setting" type="Control"]
 layout_mode = 3
@@ -11,6 +12,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rb6td")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(3993, 0)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_qtdu7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0d3v6")

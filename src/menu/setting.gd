@@ -11,9 +11,13 @@ func _ready():
 	bus_index = AudioServer.get_bus_index("Master")
 	$VBoxContainer/ControleButton.grab_focus()
 	$VBoxContainer/volume_slider.value = 1
+
+var scroll_x = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Scroll background
+	scroll_x -= 200 * delta
+	$ParallaxBackground.scroll_offset.x = scroll_x
 
 func _on_controle_button_pressed():
 	get_tree().change_scene_to_file("res://scene/menu/control_interface.tscn")

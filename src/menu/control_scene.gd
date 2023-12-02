@@ -64,9 +64,12 @@ func _input(event):
 func _update_action_list(button, event):
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
 
+var scroll_x = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Scroll background
+	scroll_x -= 200 * delta
+	$ParallaxBackground.scroll_offset.x = scroll_x
 
 
 func _on_exit_button_pressed():
