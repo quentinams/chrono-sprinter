@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var player = $MAIN/Player
 var speed
 var velocity = Vector2 (1000, 0)
 
