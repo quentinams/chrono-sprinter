@@ -1,12 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3n45hx0bccsb"]
+[gd_scene load_steps=7 format=3 uid="uid://d3n45hx0bccsb"]
 
-[ext_resource type="Texture2D" uid="uid://dxe1wgbg366es" path="res://assets/icon.svg" id="1_3lp1s"]
+[ext_resource type="Texture2D" uid="uid://cn2p7ard6a2qp" path="res://assets/player/fly/tile000.png" id="2_4cee4"]
 [ext_resource type="Script" path="res://src/player.gd" id="2_fbsti"]
+[ext_resource type="Texture2D" uid="uid://bmjsr3heya2fn" path="res://assets/player/fly/tile001.png" id="3_4bhf3"]
+[ext_resource type="Texture2D" uid="uid://cjpdmjyjvcybk" path="res://assets/player/fly/tile002.png" id="4_qvilw"]
+[ext_resource type="Texture2D" uid="uid://b8yl0vpu01yye" path="res://assets/player/fly/tile003.png" id="5_piult"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sq34y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4cee4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4bhf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qvilw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_piult")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("2_fbsti")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_3lp1s")
+sprite_frames = SubResource("SpriteFrames_sq34y")
+frame_progress = 0.574778

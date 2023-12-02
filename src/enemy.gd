@@ -7,6 +7,7 @@ var velocity = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("shoot_cooldown").start()
+	$Sprite2D.play("default")
 	pass # Replace with function body.
 
 
@@ -24,7 +25,9 @@ func shoot_player():
 func _process(delta):
 	if not get_parent().get_node("Player").is_moving:
 		position += Vector2 (-75, 0) * delta
+		$shoot_cooldown.wait_time = 2
 	else:
+		$shoot_cooldown.wait_time = 0.75
 		position += velocity * delta
 	if global_position.x < -128:
 		queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj83unvpdwod4"
-path="res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"
+uid="uid://cn2p7ard6a2qp"
+path="res://.godot/imported/tile000.png-a5275ed1f960a715c2d46f04ad0f49e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/setting/sound.png"
-dest_files=["res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"]
+source_file="res://assets/player/fly/tile000.png"
+dest_files=["res://.godot/imported/tile000.png-a5275ed1f960a715c2d46f04ad0f49e0.ctex"]
 
 [params]
 

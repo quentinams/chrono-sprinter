@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj83unvpdwod4"
-path="res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"
+uid="uid://dxd8n6521ucv4"
+path="res://.godot/imported/ennemi.png-6d831ad7815d02ec76d7b134dc68a820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/setting/sound.png"
-dest_files=["res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"]
+source_file="res://assets/enemy/ennemi.png"
+dest_files=["res://.godot/imported/ennemi.png-6d831ad7815d02ec76d7b134dc68a820.ctex"]
 
 [params]
 

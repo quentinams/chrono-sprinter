@@ -13,7 +13,7 @@ func _process(delta):
 	$ParallaxBackground.scroll_offset.x = scroll_x
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scene/menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scene/main.tscn")
 
 
 func _on_settings_button_pressed():

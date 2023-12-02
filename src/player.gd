@@ -9,6 +9,7 @@ var is_moving = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Sprite2D.play("default")
 	position = player_start_pos
 	_print_infos()
 

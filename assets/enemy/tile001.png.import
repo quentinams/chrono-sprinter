@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj83unvpdwod4"
-path="res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"
+uid="uid://cxsmj1lwd01p6"
+path="res://.godot/imported/tile001.png-151b73b06521dd684971347012c37b17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/setting/sound.png"
-dest_files=["res://.godot/imported/sound.png-beb932bb79904c4735975ae0f79aa0d0.ctex"]
+source_file="res://assets/enemy/tile001.png"
+dest_files=["res://.godot/imported/tile001.png-151b73b06521dd684971347012c37b17.ctex"]
 
 [params]
 
