@@ -1,7 +1,7 @@
 extends Node2D
 
 var speed
-var velocity = Vector2 (1000, 0)
+var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,8 +10,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_parent().get_node("Player").is_moving:
-		position += velocity * delta
-		if global_position.x > 800:
-			queue_free()
+	if not get_parent().get_node("Player").is_moving:
+		velocity.x = 50
+	else:
+		velocity.x = 1000
+	position += velocity * delta
+	if global_position.x > 800:
+		queue_free()
 	pass
