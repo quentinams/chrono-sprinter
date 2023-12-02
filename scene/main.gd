@@ -36,7 +36,8 @@ func _process(delta):
 
 
 func _on_spawn_enemy_timeout():
-	spawn_enemy()
-	get_node("spawn_enemy").stop()
-	get_node("spawn_enemy").start()
+	if get_node("Player").is_moving:
+		spawn_enemy()
+		get_node("spawn_enemy").stop()
+		get_node("spawn_enemy").start()
 	pass # Replace with function body.
