@@ -7,5 +7,4 @@
 script = ExtResource("2_fbsti")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(65, 58)
 texture = ExtResource("1_3lp1s")

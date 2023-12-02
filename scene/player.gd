@@ -35,7 +35,7 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
-	position.x = clamp(position.x, screen_size.position.x, screen_size.end.x - (player_size.x * player_scale.x))
-	position.y = clamp(position.y, screen_size.position.y, screen_size.end.y - (player_size.y * player_scale.y))
+	position.x = clamp(position.x, (screen_size.position.x + (player_size.x * player_scale.x) / 2), screen_size.end.x - ((player_size.x * player_scale.x) / 2))
+	position.y = clamp(position.y, (screen_size.position.y + (player_size.y * player_scale.y) / 2), screen_size.end.y - ((player_size.y * player_scale.y) / 2))
 	if velocity == Vector2.ZERO:
 		is_moving = false
