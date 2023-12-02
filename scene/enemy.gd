@@ -2,7 +2,7 @@ extends Node2D
 
 var bullet = preload("res://scene/bullet.tscn")
 var speed
-var velocity
+var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,17 +21,18 @@ func shoot_player():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_parent().get_node("Player").is_moving:
+	if not get_parent().get_node("Player").is_moving:
+		position += Vector2 (-75, 0) * delta
+	else:
 		position += velocity * delta
-		if global_position.x < -128:
-			queue_free()
+	if global_position.x < -128:
+		queue_free()
 	pass
 	
 
 
 func _on_shoot_cooldown_timeout():
-	if get_parent().get_node("Player").is_moving:
-		shoot_player()
-		get_node("shoot_cooldown").stop()
-		get_node("shoot_cooldown").start()
+	shoot_player()
+	get_node("shoot_cooldown").stop()
+	get_node("shoot_cooldown").start()
 	pass # Replace with function body.

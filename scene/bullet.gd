@@ -11,10 +11,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not get_parent().get_node("Player").is_moving:
-		velocity.x = 50
-	else:
-		velocity.x = 1000
-	position += velocity * delta
+		position += (velocity * delta)/4
+	else :
+		position += velocity * delta
 	if global_position.x > 800:
 		queue_free()
 	pass
