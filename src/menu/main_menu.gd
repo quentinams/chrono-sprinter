@@ -5,11 +5,13 @@ extends Control
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
-
+var scroll_x = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	# Scroll background
+	scroll_x -= 200 * delta
+	$ParallaxBackground.scroll_offset.x = scroll_x
+pass
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://scene/menu/main_menu.tscn")

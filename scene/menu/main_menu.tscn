@@ -28,6 +28,7 @@ scroll_ignore_camera_zoom = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(742, 335)
 scale = Vector2(0.655, 0.655)
+motion_scale = Vector2(0.2, 0.2)
 
 [node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
@@ -36,10 +37,6 @@ offset_top = -509.924
 offset_right = 3084.46
 offset_bottom = 514.076
 texture = ExtResource("2_2mpqi")
-
-[node name="Camera2D" type="Camera2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-523.664, -53.4352)
-scale = Vector2(1, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
