@@ -1,14 +1,13 @@
 extends Node2D
 
 var speed = 800
-var screen_size
 var player_size = Vector2 (128, 128)
 var player_scale = Vector2 (0.5, 0.5)
 var player_start_pos = Vector2 (50, 500)
+@onready var screen_size = get_parent().get_node("Camera/Camera2D").get_viewport_rect()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_parent().get_node("Camera/Camera2D").get_viewport_rect()
 	position = player_start_pos
 	_print_infos()
 
