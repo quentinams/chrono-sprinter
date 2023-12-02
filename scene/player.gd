@@ -16,4 +16,6 @@ func _process(delta):
 		self.position.x -= 10
 	if Input.is_action_pressed("player_right"):
 		self.position.x += 10
+	position.x = clamp(position.x, $Camera.limit_left, $Camera.limit_right)
+	position.y = clamp(position.y, $Camera.limit_top, $Camera.limit_bottom)
 	pass
