@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu2d8syqqauc5"]
+[gd_scene load_steps=7 format=3 uid="uid://bu2d8syqqauc5"]
 
 [ext_resource type="Script" path="res://src/menu/main_menu.gd" id="1_6tpja"]
+[ext_resource type="Texture2D" uid="uid://c64d6ghwsufam" path="res://assets/menu/background.png" id="2_2mpqi"]
+[ext_resource type="FontFile" uid="uid://cvmquumd6um6u" path="res://assets/fonts/Beyonders.ttf" id="2_4h8la"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oejyb"]
+bg_color = Color(0.713726, 0.286275, 0.14902, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olp8g"]
+bg_color = Color(0.713726, 0.286275, 0.14902, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvpeb"]
+bg_color = Color(0.713726, 0.286275, 0.14902, 0.784314)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -11,6 +22,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6tpja")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2(6144, 0)
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(741, 334)
+scale = Vector2(0.655, 0.655)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(6130, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(-2636.64, -535.878)
+scale = Vector2(1, 1)
+texture = ExtResource("2_2mpqi")
+centered = false
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,42 +46,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = -62.0
+offset_top = -50.0
+offset_right = 62.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitButton")
-text = "Start"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oejyb")
+text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_olp8g")
+text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
-text = "Exit"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fvpeb")
+text = "Quit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -195.0
-offset_top = 140.0
-offset_right = 195.0
-offset_bottom = 209.0
+offset_left = -402.0
+offset_top = 117.0
+offset_right = 399.0
+offset_bottom = 205.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "Chrono Sprinter"
+theme_override_colors/font_color = Color(1, 0.733333, 0.654902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4h8la")
+theme_override_font_sizes/font_size = 35
+text = " Chrono Sprinter"
 horizontal_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_settings_button_pressed"]
