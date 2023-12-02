@@ -17,15 +17,17 @@ func shoot_player():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += velocity * delta
-	if global_position.x < -128:
-		queue_free()
+	if get_parent().get_node("Player").is_moving:
+		position += velocity * delta
+		if global_position.x < -128:
+			queue_free()
 	pass
 	
 
 
 func _on_shoot_cooldown_timeout():
-	shoot_player()
-	get_node("shoot_cooldown").stop()
-	get_node("shoot_cooldown").start()
+	if get_parent().get_node("Player").is_moving:
+		shoot_player()
+		get_node("shoot_cooldown").stop()
+		get_node("shoot_cooldown").start()
 	pass # Replace with function body.
