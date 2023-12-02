@@ -6,5 +6,6 @@
 [node name="MAIN" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_epx3o")]
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera" parent="." instance=ExtResource("2_gn3qi")]

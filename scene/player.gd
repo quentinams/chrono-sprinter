@@ -1,5 +1,6 @@
 extends Node2D
 
+var speed = 400
 var screensize
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,14 +10,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("player_up"):
-		self.position.y -= 10
+		velocity.y -= 1
 	if Input.is_action_pressed("player_down"):
-		self.position.y += 10
+		velocity.y += 1
 	if Input.is_action_pressed("player_left"):
-		self.position.x -= 10
+		velocity.x -= 1
 	if Input.is_action_pressed("player_right"):
-		self.position.x += 10
-	position.x = clamp(position.x, screensize.position.x, screensize.end.x)
-	position.y = clamp(position.y, screensize.position.y, screensize.end.y)
+		velocity.x += 1
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+	position += velocity * delta
+	# position.x = clamp(position.x, screensize.position.x, screensize.end.x)
+	# position.y = clamp(position.y, screensize.position.y, screensize.end.y)
 	pass
