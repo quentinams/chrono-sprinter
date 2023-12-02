@@ -32,6 +32,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("player_shoot"):
 		spawn_bullet()
 		$Player.is_moving = true
+	if !$Player.is_moving:
+		get_node("spawn_enemy").paused = true
+	else :
+		get_node("spawn_enemy").paused = false
 	pass
 
 
