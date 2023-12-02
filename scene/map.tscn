@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw274ggdpucia"]
+
+[ext_resource type="Texture2D" uid="uid://cpilltp0g51kb" path="res://assets/steampunk_background.png" id="1_4ceor"]
+[ext_resource type="Script" path="res://src/map.gd" id="1_re7nu"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_re7nu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(3650, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_4ceor")
