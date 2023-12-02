@@ -23,20 +23,23 @@ grow_vertical = 2
 script = ExtResource("1_6tpja")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_limit_end = Vector2(6144, 0)
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(741, 334)
+position = Vector2(742, 335)
 scale = Vector2(0.655, 0.655)
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(6130, 0)
 
-[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(-2636.64, -535.878)
+offset_left = -3059.54
+offset_top = -509.924
+offset_right = 3084.46
+offset_bottom = 514.076
 texture = ExtResource("2_2mpqi")
-centered = false
+
+[node name="Camera2D" type="Camera2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-523.664, -53.4352)
+scale = Vector2(1, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
