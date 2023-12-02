@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://7hb5sfl5ckgp"]
+[gd_scene load_steps=3 format=3 uid="uid://bn3n6jlh3m1ux"]
 
-[ext_resource type="Script" path="res://scene/bullet.gd" id="1_ep06j"]
 [ext_resource type="Texture2D" uid="uid://b4d6xi7dgp53w" path="res://assets/pixil-frame-0.png" id="1_hahmx"]
+[ext_resource type="Script" path="res://src/bullet.gd" id="1_nu4cg"]
 
 [node name="Bullet" type="Node2D"]
-script = ExtResource("1_ep06j")
+script = ExtResource("1_nu4cg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_hahmx")
 centered = false
