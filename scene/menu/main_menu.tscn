@@ -26,16 +26,14 @@ script = ExtResource("1_6tpja")
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(742, 335)
-scale = Vector2(0.655, 0.655)
 motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(3993, 0)
 
 [node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-offset_left = -3059.54
-offset_top = -509.924
-offset_right = 3084.46
-offset_bottom = 514.076
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_2mpqi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
