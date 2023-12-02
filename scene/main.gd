@@ -31,6 +31,7 @@ func spawn_enemy():
 func _process(delta):
 	if Input.is_action_just_pressed("player_shoot"):
 		spawn_bullet()
+		$Player.is_moving = true
 	pass
 
 
