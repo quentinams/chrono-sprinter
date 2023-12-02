@@ -12,16 +12,16 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("player_up"):
-		velocity.y -= 1
+		velocity.y -= 1 * delta
 	if Input.is_action_pressed("player_down"):
-		velocity.y += 1
+		velocity.y += 1 * delta
 	if Input.is_action_pressed("player_left"):
-		velocity.x -= 1
+		velocity.x -= 1 * delta
 	if Input.is_action_pressed("player_right"):
-		velocity.x += 1
+		velocity.x += 1 * delta
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-	position += velocity * delta
+	position += velocity
 	# position.x = clamp(position.x, screensize.position.x, screensize.end.x)
 	# position.y = clamp(position.y, screensize.position.y, screensize.end.y)
 	pass
