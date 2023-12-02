@@ -9,3 +9,8 @@ script = ExtResource("1_1e1tx")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(63, 66)
 texture = ExtResource("1_04jo0")
+
+[node name="shoot_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="shoot_cooldown" to="." method="_on_shoot_cooldown_timeout"]
