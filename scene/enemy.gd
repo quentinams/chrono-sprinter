@@ -14,6 +14,7 @@ func shoot_player():
 	var new_bullet = bullet.instantiate()
 	var player = get_parent().get_node("Player")
 	new_bullet.global_position = self.global_position
+	new_bullet.rotation = (player.global_position - new_bullet.position).angle()
 	new_bullet.velocity = Vector2(700,0).rotated((player.global_position - new_bullet.position).angle())
 	get_parent().add_child(new_bullet)
 	pass
