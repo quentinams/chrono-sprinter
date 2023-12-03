@@ -54,18 +54,18 @@ grow_vertical = 2
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitButton")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oejyb")
-text = "Play"
+text = "PLAY"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/pressed = SubResource("StyleBoxFlat_olp8g")
-text = "Options"
+text = "OPTIONS"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fvpeb")
-text = "Quit"
+text = "QUIT"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

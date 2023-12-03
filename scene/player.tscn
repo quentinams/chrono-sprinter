@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3n45hx0bccsb"]
 
-[ext_resource type="Texture2D" uid="uid://cn2p7ard6a2qp" path="res://assets/player/fly/tile000.png" id="2_4cee4"]
+[ext_resource type="Texture2D" path="res://assets/player/fly/tile000.png" id="2_4cee4"]
 [ext_resource type="Script" path="res://src/player.gd" id="2_fbsti"]
-[ext_resource type="Texture2D" uid="uid://bmjsr3heya2fn" path="res://assets/player/fly/tile001.png" id="3_4bhf3"]
-[ext_resource type="Texture2D" uid="uid://cjpdmjyjvcybk" path="res://assets/player/fly/tile002.png" id="4_qvilw"]
-[ext_resource type="Texture2D" uid="uid://b8yl0vpu01yye" path="res://assets/player/fly/tile003.png" id="5_piult"]
+[ext_resource type="Texture2D" path="res://assets/player/fly/tile001.png" id="3_4bhf3"]
+[ext_resource type="Texture2D" path="res://assets/player/fly/tile002.png" id="4_qvilw"]
+[ext_resource type="Texture2D" path="res://assets/player/fly/tile003.png" id="5_piult"]
 [ext_resource type="Texture2D" uid="uid://cu8dpgo5q1c33" path="res://assets/Itch CSGO Weapons/CSGO Pistols X1.png" id="6_ene5d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sq34y"]
