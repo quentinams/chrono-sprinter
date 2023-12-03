@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuh1stvoquf2p"]
+
+[ext_resource type="Script" path="res://src/map.gd" id="1_5lmjc"]
+[ext_resource type="Texture2D" uid="uid://b5t8fradli72n" path="res://assets/medieval_background.png" id="2_4bd1k"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_5lmjc")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(3680, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_4bd1k")
