@@ -1,5 +1,6 @@
 extends Node2D
 
+var pres = preload("res://scene/main.tscn")
 var score = 0
 var enemy = preload("res://scene/enemy.tscn")
 var bullet = preload("res://scene/bulletplayer.tscn")
@@ -60,6 +61,15 @@ func spawn_enemy():
 	self.add_child(new_enemy)
 	pass
 
+func gotopresent():
+	if get_node("Past BOSS").health == 0:
+		get_node("spawn_enemy").stop()
+		hide()
+		var pres_ins = pres.instantiate()
+		score += 1
+		pres_ins.score = score
+		get_parent().add_child(pres_ins)
+		queue_free()
 
 func _process(delta):
 	update_health_bar()
@@ -76,8 +86,7 @@ func _process(delta):
 		get_node("spawn_enemy").wait_time = 1
 	if $Player.health == 0:
 		queue_free()
-	if get_node("Past BOSS").health == 0:
-		queue_free()
+	gotopresent()
 	pass
 
 

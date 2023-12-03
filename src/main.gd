@@ -1,5 +1,6 @@
 extends Node2D
 
+var fut = preload("res://scene/future/futuremain.tscn")
 var past = preload("res://scene/past/pastmain.tscn")
 var score = 0
 var enemy = preload("res://scene/enemy.tscn")
@@ -63,7 +64,7 @@ func spawn_enemy():
 	pass
 
 func gotopast():
-	if score == 100:
+	if score == 50:
 		get_node("spawn_enemy").stop()
 		hide()
 		var past_ins = past.instantiate()
@@ -72,7 +73,16 @@ func gotopast():
 		get_parent().add_child(past_ins)
 		queue_free()
 
-
+func gotofuture():
+	if score == 200:
+		get_node("spawn_enemy").stop()
+		hide()
+		var fut_ins = fut.instantiate()
+		score += 1;
+		fut_ins.score = score
+		get_parent().add_child(fut_ins)
+		queue_free()
+		
 func _process(_delta):
 	update_health_bar()
 	update_score()
@@ -87,6 +97,7 @@ func _process(_delta):
 	else :
 		get_node("spawn_enemy").wait_time = 1
 	gotopast()
+	gotofuture()
 	pass
 
 

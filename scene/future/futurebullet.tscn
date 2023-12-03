@@ -1,19 +1,148 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjewubcn85d1c"]
+[gd_scene load_steps=34 format=3 uid="uid://cjewubcn85d1c"]
 
-[ext_resource type="Script" path="res://src/bullet.gd" id="1_rtd41"]
-[ext_resource type="Texture2D" uid="uid://cg78slbyo4la8" path="res://assets/weapons/lance.png" id="2_ur6ro"]
+[ext_resource type="Script" path="res://src/futurebullet.gd" id="1_r25mb"]
+[ext_resource type="Texture2D" uid="uid://byw6y4ofleoti" path="res://assets/weapons/2/1_0.png" id="2_k2u1u"]
+[ext_resource type="Texture2D" uid="uid://dao20oqw38moo" path="res://assets/weapons/2/1_1.png" id="3_ek1qu"]
+[ext_resource type="Texture2D" uid="uid://bbpl6ubxw7i7v" path="res://assets/weapons/2/1_2.png" id="4_3wreq"]
+[ext_resource type="Texture2D" uid="uid://ddyjxh31h5w7p" path="res://assets/weapons/2/1_3.png" id="5_t0r8h"]
+[ext_resource type="Texture2D" uid="uid://jw4l04yaqiii" path="res://assets/weapons/2/1_4.png" id="6_tmv2w"]
+[ext_resource type="Texture2D" uid="uid://cfafbcgwbtn04" path="res://assets/weapons/2/1_5.png" id="7_ivwmf"]
+[ext_resource type="Texture2D" uid="uid://cohfiltg18osf" path="res://assets/weapons/2/1_6.png" id="8_btmt7"]
+[ext_resource type="Texture2D" uid="uid://c55g4udhhxleo" path="res://assets/weapons/2/1_7.png" id="9_1h6xj"]
+[ext_resource type="Texture2D" uid="uid://c1mfd4nofyfnb" path="res://assets/weapons/2/1_8.png" id="10_c1el4"]
+[ext_resource type="Texture2D" uid="uid://dgvrws6emup5h" path="res://assets/weapons/2/1_9.png" id="11_cheev"]
+[ext_resource type="Texture2D" uid="uid://bq85dku2s30hb" path="res://assets/weapons/2/1_10.png" id="12_qqv43"]
+[ext_resource type="Texture2D" uid="uid://f35w6pqhrjbr" path="res://assets/weapons/2/1_11.png" id="13_5t5rw"]
+[ext_resource type="Texture2D" uid="uid://upb3mltr4qhn" path="res://assets/weapons/2/1_12.png" id="14_1gptb"]
+[ext_resource type="Texture2D" uid="uid://cv5sw467c4xsj" path="res://assets/weapons/2/1_13.png" id="15_q1deb"]
+[ext_resource type="Texture2D" uid="uid://bqcr771362864" path="res://assets/weapons/2/1_14.png" id="16_uthxm"]
+[ext_resource type="Texture2D" uid="uid://v101wa8ubyep" path="res://assets/weapons/2/1_15.png" id="17_b4y52"]
+[ext_resource type="Texture2D" uid="uid://crk4aba1dluev" path="res://assets/weapons/2/1_16.png" id="18_68fs7"]
+[ext_resource type="Texture2D" uid="uid://ce2sgykhep84r" path="res://assets/weapons/2/1_17.png" id="19_kbhwx"]
+[ext_resource type="Texture2D" uid="uid://c3scao2gakmfe" path="res://assets/weapons/2/1_18.png" id="20_718up"]
+[ext_resource type="Texture2D" uid="uid://bokypg6e30iar" path="res://assets/weapons/2/1_19.png" id="21_qeltk"]
+[ext_resource type="Texture2D" uid="uid://c5ffljfsddnlq" path="res://assets/weapons/2/1_20.png" id="22_u6r6v"]
+[ext_resource type="Texture2D" uid="uid://bvttft8442uhp" path="res://assets/weapons/2/1_21.png" id="23_kci1a"]
+[ext_resource type="Texture2D" uid="uid://caj52ipylhtxy" path="res://assets/weapons/2/1_22.png" id="24_nmvkq"]
+[ext_resource type="Texture2D" uid="uid://cfueqxee77lsf" path="res://assets/weapons/2/1_23.png" id="25_ertfh"]
+[ext_resource type="Texture2D" uid="uid://dvooh5bhfyt1k" path="res://assets/weapons/2/1_24.png" id="26_avlqc"]
+[ext_resource type="Texture2D" uid="uid://3gxwjbef5poh" path="res://assets/weapons/2/1_25.png" id="27_rsj25"]
+[ext_resource type="Texture2D" uid="uid://8ussytps0nld" path="res://assets/weapons/2/1_26.png" id="28_ciyvi"]
+[ext_resource type="Texture2D" uid="uid://di11ohe8n8dox" path="res://assets/weapons/2/1_27.png" id="29_nfv0m"]
+[ext_resource type="Texture2D" uid="uid://20b4lr32u257" path="res://assets/weapons/2/1_28.png" id="30_21dod"]
+[ext_resource type="Texture2D" uid="uid://es7hklgl6mtc" path="res://assets/weapons/2/1_29.png" id="31_fdmf4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15tft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k2u1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ek1qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3wreq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t0r8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tmv2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ivwmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_btmt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1h6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c1el4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cheev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qqv43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5t5rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1gptb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_q1deb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uthxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b4y52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_68fs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kbhwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_718up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qeltk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_u6r6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kci1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nmvkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ertfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_avlqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rsj25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ciyvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nfv0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_21dod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_fdmf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 29.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qy0pq"]
-radius = 2.66667
-height = 17.3333
+radius = 5.33333
+height = 22.6667
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_rtd41")
+script = ExtResource("1_r25mb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_ur6ro")
+position = Vector2(-53, -95)
+scale = Vector2(1.98, 1.98)
+sprite_frames = SubResource("SpriteFrames_15tft")
+frame_progress = 0.130989
 centered = false
 offset = Vector2(-40, -4)
 

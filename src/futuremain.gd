@@ -50,7 +50,7 @@ func spawn_bullet():
 	var new_bullet_pos = $Player.position + Vector2(20, 0)
 	new_bullet.global_position = new_bullet_pos
 	new_bullet.velocity = Vector2 (1000, 0)
-	self.add_child(new_bullet)
+	get_parent().add_child(new_bullet)
 
 
 func spawn_enemy():
@@ -89,3 +89,7 @@ func _on_pistol_timer_timeout():
 	$Player/pistolTimer.stop()
 	$Player.get_node("Pistol").visible = false
 	pass
+
+
+func _on_shoot_cooldown_timeout():
+	pass # Replace with function body.

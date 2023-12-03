@@ -132,10 +132,13 @@ scale = Vector2(-5, 5)
 script = ExtResource("7_vsxsv")
 
 [node name="shoot_cooldown" type="Timer" parent="Future BOSS"]
+wait_time = 0.001
+autostart = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("5_ovstr")]
 
 [node name="pistolTimer" type="Timer" parent="Player"]
+wait_time = 0.5
 
 [node name="health" type="ProgressBar" parent="."]
 offset_left = 458.0
@@ -145,4 +148,5 @@ offset_bottom = 40.0
 value = 100.0
 
 [connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
+[connection signal="timeout" from="Future BOSS/shoot_cooldown" to="Future BOSS" method="_on_shoot_cooldown_timeout"]
 [connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]
