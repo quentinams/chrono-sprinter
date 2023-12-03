@@ -64,11 +64,12 @@ func spawn_enemy():
 func _process(delta):
 	update_health_bar()
 	update_score()
-	if Input.is_action_just_pressed("player_shoot"):
+	if Input.is_action_just_pressed("player_shoot") and $Player/gun_cooldown.time_left <= 0:
 		$Player.get_node("Pistol").visible = true
 		spawn_bullet()
 		$Player/pistolTimer.start()
 		$Player.is_moving = true
+		$Player/gun_cooldown.start()
 	if !$Player.is_moving:
 		get_node("spawn_enemy").wait_time = 2
 	else :
@@ -89,3 +90,8 @@ func _on_pistol_timer_timeout():
 	$Player/pistolTimer.stop()
 	$Player.get_node("Pistol").visible = false
 	pass
+
+
+func _on_gun_cooldown_timeout():
+	$Player/gun_cooldown.stop()
+	pass # Replace with function body.

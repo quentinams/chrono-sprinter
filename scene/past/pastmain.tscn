@@ -127,6 +127,10 @@ texture = ExtResource("3_xto8m")
 
 [node name="pistolTimer" type="Timer" parent="Player"]
 
+[node name="gun_cooldown" type="Timer" parent="Player"]
+wait_time = 0.5
+autostart = true
+
 [node name="Map" parent="." instance=ExtResource("6_01xr7")]
 position = Vector2(519.745, 45.5992)
 
@@ -146,4 +150,5 @@ show_percentage = false
 
 [connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
 [connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]
+[connection signal="timeout" from="Player/gun_cooldown" to="." method="_on_gun_cooldown_timeout"]
 [connection signal="timeout" from="Past BOSS/shoot_cooldown" to="Past BOSS" method="_on_shoot_cooldown_timeout"]
