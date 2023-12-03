@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dobrbqpsp6dln"]
+[gd_scene load_steps=9 format=3 uid="uid://dobrbqpsp6dln"]
 
 [ext_resource type="Script" path="res://src/pastmain.gd" id="1_iabi6"]
 [ext_resource type="Texture2D" uid="uid://cumhx4wqppwbf" path="res://assets/health_full.png" id="2_k61vt"]
 [ext_resource type="Texture2D" uid="uid://12aqnwcapx71" path="res://assets/health_empty.png" id="3_me7ch"]
 [ext_resource type="PackedScene" uid="uid://b1o7qfdy8d1j3" path="res://scene/camera.tscn" id="4_7nlep"]
 [ext_resource type="PackedScene" uid="uid://d3n45hx0bccsb" path="res://scene/player.tscn" id="5_ovstr"]
-[ext_resource type="PackedScene" uid="uid://cuh1stvoquf2p" path="res://scene/past/pastmap.tscn" id="6_dfqij"]
-[ext_resource type="PackedScene" uid="uid://b6vrsxlxt3ja0" path="res://scene/past/past_boss.tscn" id="7_cxk5o"]
+[ext_resource type="PackedScene" uid="uid://d05kw030fdwse" path="res://scene/future/futuremap.tscn" id="6_eamkd"]
+[ext_resource type="PackedScene" uid="uid://5sf4vmcb7oau" path="res://scene/future/future_boss.tscn" id="7_wnhu1"]
+[ext_resource type="PackedScene" uid="uid://br0rwjg6n01kf" path="res://scene/future/futureplayer.tscn" id="8_5gu2m"]
 
-[node name="PASTMAIN" type="Node2D"]
+[node name="FUTUREMAIN" type="Node2D"]
 script = ExtResource("1_iabi6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -127,14 +128,13 @@ texture = ExtResource("3_me7ch")
 
 [node name="pistolTimer" type="Timer" parent="Player"]
 
-[node name="Map" parent="." instance=ExtResource("6_dfqij")]
-position = Vector2(519.745, 45.5992)
+[node name="Map" parent="." instance=ExtResource("6_eamkd")]
 
-[node name="Past BOSS" parent="." instance=ExtResource("7_cxk5o")]
-position = Vector2(637, 414)
-scale = Vector2(-3, 3)
+[node name="Future BOSS" parent="." instance=ExtResource("7_wnhu1")]
+position = Vector2(690, 500)
+scale = Vector2(-5, 5)
 
-[node name="shoot_cooldown" type="Timer" parent="Past BOSS"]
+[node name="shoot_cooldown" type="Timer" parent="Future BOSS"]
 
 [node name="health" type="ProgressBar" parent="."]
 offset_left = 458.0
@@ -143,6 +143,7 @@ offset_right = 792.0
 offset_bottom = 40.0
 value = 100.0
 
+[node name="Player2" parent="." instance=ExtResource("8_5gu2m")]
+
 [connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
 [connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]
-[connection signal="timeout" from="Past BOSS/shoot_cooldown" to="Past BOSS" method="_on_shoot_cooldown_timeout"]

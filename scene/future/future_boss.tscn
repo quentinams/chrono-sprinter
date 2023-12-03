@@ -1,62 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://5sf4vmcb7oau"]
+[gd_scene load_steps=4 format=3 uid="uid://5sf4vmcb7oau"]
 
 [ext_resource type="Script" path="res://src/past_boss.gd" id="1_ksyeq"]
-[ext_resource type="Texture2D" uid="uid://by2xll2us3cgt" path="res://assets/past boss/tile000.png" id="2_gadmx"]
-[ext_resource type="Texture2D" uid="uid://cao05bbbpuc7w" path="res://assets/past boss/tile001.png" id="3_3qeac"]
-[ext_resource type="Texture2D" uid="uid://dpavi6ts0rmmv" path="res://assets/past boss/tile002.png" id="4_e2w3w"]
-[ext_resource type="Texture2D" uid="uid://0e0n6poi1lm7" path="res://assets/past boss/tile003.png" id="5_hx0a0"]
-[ext_resource type="Texture2D" uid="uid://ba5uer38esxwr" path="res://assets/past boss/tile004.png" id="6_lbqpv"]
-[ext_resource type="Texture2D" uid="uid://b5dm7wfx1to67" path="res://assets/past boss/tile005.png" id="7_6fqww"]
-[ext_resource type="Texture2D" uid="uid://cos2kumt2wt1f" path="res://assets/past boss/tile006.png" id="8_4eq46"]
-[ext_resource type="Texture2D" uid="uid://ckx6j4tbob6ri" path="res://assets/past boss/tile007.png" id="9_j7rgd"]
-[ext_resource type="Texture2D" uid="uid://dfw46nnc52vt0" path="res://assets/past boss/tile008.png" id="10_8jkbf"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dv5ro"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_gadmx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_3qeac")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e2w3w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_hx0a0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_lbqpv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_6fqww")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_4eq46")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_j7rgd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_8jkbf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="Texture2D" uid="uid://b5u0xny4pjh8i" path="res://assets/antenne.png" id="2_38kq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3tj"]
-size = Vector2(100.5, 115.5)
+size = Vector2(41, 36)
 
 [node name="Past BOSS" type="Area2D" groups=["boss"]]
 script = ExtResource("1_ksyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["boss"]]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." groups=["boss"]]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_dv5ro")
-frame_progress = 0.373072
+texture = ExtResource("2_38kq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["boss"]]
-position = Vector2(-1, 8.75)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_tu3tj")

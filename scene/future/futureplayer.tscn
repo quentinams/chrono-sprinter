@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://br0rwjg6n01kf"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_f128c"]
+[ext_resource type="Texture2D" uid="uid://b0or3jgo81wva" path="res://assets/player/fly/sprite0.png" id="2_xipn3"]
+[ext_resource type="Texture2D" uid="uid://i3i0takxarfx" path="res://assets/player/fly/sprite1.png" id="3_7bdup"]
+[ext_resource type="Texture2D" uid="uid://dxgkikkwvmg3y" path="res://assets/player/fly/sprite2.png" id="4_no6tk"]
+[ext_resource type="Texture2D" uid="uid://b1fovo5446fwi" path="res://assets/player/fly/sprite3.png" id="5_nfj15"]
+[ext_resource type="Texture2D" uid="uid://0b36ki588pc3" path="res://assets/player/fly/sprite4.png" id="6_iqly4"]
+[ext_resource type="Texture2D" uid="uid://cu8dpgo5q1c33" path="res://assets/Itch CSGO Weapons/CSGO Pistols X1.png" id="7_4v78t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sq34y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xipn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7bdup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_no6tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nfj15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqly4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txbvs"]
+radius = 9.0
+height = 38.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_f128c")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_sq34y")
+frame_progress = 0.592517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_txbvs")
+
+[node name="Pistol" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(15, -1)
+texture = ExtResource("7_4v78t")
+hframes = 4
+vframes = 5
+frame = 10
