@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgfb126tuy141"]
+
+[ext_resource type="Script" path="res://src/menu/ending_screen.gd" id="1_hj55s"]
+[ext_resource type="Texture2D" uid="uid://c64d6ghwsufam" path="res://assets/menu/background.png" id="1_vfrsy"]
+[ext_resource type="FontFile" uid="uid://cvmquumd6um6u" path="res://assets/fonts/Beyonders.ttf" id="3_y7wpk"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kr0x"]
+blend_mode = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arvf6"]
+bg_color = Color(0.713726, 0.286275, 0.14902, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8l82"]
+bg_color = Color(0.713726, 0.286275, 0.14902, 0.784314)
+
+[node name="Ending Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hj55s")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(3993, 0)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_0kr0x")
+offset_right = 6144.0
+offset_bottom = 1024.0
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_vfrsy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -50.0
+offset_right = 62.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_arvf6")
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../RestartButton")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n8l82")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -402.0
+offset_top = 117.0
+offset_right = 399.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.627451, 0, 0.101961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y7wpk")
+theme_override_font_sizes/font_size = 35
+text = " You lost"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
