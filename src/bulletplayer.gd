@@ -21,12 +21,14 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area.is_in_group("enemy"):
-		get_parent().score += 1
+		get_parent().score += 2
 		queue_free()
 		area.queue_free()
 	if area.is_in_group("boss"):
 		area.health -= 1
-		if area.health <= 0:
+		get_parent().score += 1
+		if area.health <= -1:
+			get_parent().score += 50
 			area.queue_free()
 		queue_free()
 	pass # Replace with function body.

@@ -45,4 +45,3 @@ func _process(delta):
 	movement(delta)
 	if health <= 0:
 		get_tree().change_scene_to_file("res://scene/menu/ending_screen.tscn")
-		

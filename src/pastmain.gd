@@ -73,6 +73,8 @@ func _process(delta):
 		get_node("spawn_enemy").wait_time = 2
 	else :
 		get_node("spawn_enemy").wait_time = 1
+	if $Player.health == 0:
+		queue_free()
 	pass
 
 

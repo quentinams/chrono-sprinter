@@ -1,5 +1,6 @@
 extends Node2D
 
+var past = preload("res://scene/past/pastmain.tscn")
 var score = 0
 var enemy = preload("res://scene/enemy.tscn")
 var bullet = preload("res://scene/bulletplayer.tscn")
@@ -73,6 +74,14 @@ func _process(_delta):
 		get_node("spawn_enemy").wait_time = 2
 	else :
 		get_node("spawn_enemy").wait_time = 1
+	if score == 50:
+		get_node("spawn_enemy").stop()
+		hide()
+		var past_ins = past.instantiate()
+		score += 1;
+		past_ins.score = score
+		get_parent().add_child(past_ins)
+		queue_free()
 	pass
 
 
