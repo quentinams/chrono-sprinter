@@ -61,7 +61,7 @@ func spawn_enemy():
 	pass
 
 
-func _process(delta):
+func _process(_delta):
 	update_health_bar()
 	update_score()
 	if Input.is_action_just_pressed("player_shoot"):

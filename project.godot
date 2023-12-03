@@ -25,6 +25,12 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="chrono-sprinter"
 
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
+
 [input]
 
 player_up={
