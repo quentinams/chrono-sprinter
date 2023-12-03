@@ -1,6 +1,6 @@
 extends Area2D
 
-var bullet = preload("res://src/pastenemy.gd")
+var bullet = preload("res://scene/past/pastbullet.tscn")
 var speed
 var velocity = Vector2.ZERO
 var player

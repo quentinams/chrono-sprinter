@@ -24,4 +24,9 @@ func _on_area_entered(area):
 		get_parent().score += 1
 		queue_free()
 		area.queue_free()
+	if area.is_in_group("boss"):
+		area.health -= 1
+		if area.health <= 0:
+			area.queue_free()
+		queue_free()
 	pass # Replace with function body.

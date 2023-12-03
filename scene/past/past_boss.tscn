@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6vrsxlxt3ja0"]
+[gd_scene load_steps=13 format=3 uid="uid://b6vrsxlxt3ja0"]
 
 [ext_resource type="Script" path="res://src/past_boss.gd" id="1_3pib6"]
 [ext_resource type="Texture2D" uid="uid://by2xll2us3cgt" path="res://assets/past boss/tile000.png" id="2_16lig"]
@@ -46,10 +46,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Past BOSS" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3tj"]
+size = Vector2(100.5, 115.5)
+
+[node name="Past BOSS" type="Area2D" groups=["boss"]]
 script = ExtResource("1_3pib6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["boss"]]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dv5ro")
-frame_progress = 0.524705
+frame_progress = 0.373072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["boss"]]
+position = Vector2(-1, 8.75)
+shape = SubResource("RectangleShape2D_tu3tj")

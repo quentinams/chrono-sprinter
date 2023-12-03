@@ -9,8 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_parent().get_node("Player").is_moving:
-		scroll_x -= 200 * delta
+		scroll_x -= 500 * delta
 	else:
-		scroll_x -= 50 * delta
+		scroll_x -= 200 * delta
 	$ParallaxBackground.scroll_offset.x += scroll_x
 	pass
