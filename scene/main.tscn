@@ -112,10 +112,10 @@ text = "0"
 [node name="Border" type="TextureRect" parent="CanvasLayer/ControlScore"]
 texture_filter = 1
 layout_mode = 1
-offset_left = -28.0
-offset_right = 304.0
-offset_bottom = 110.0
-scale = Vector2(0.2, 0.2)
+offset_left = -26.0
+offset_right = 180.0
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_l2tyl")
 
 [node name="Camera" parent="." instance=ExtResource("2_gn3qi")]
