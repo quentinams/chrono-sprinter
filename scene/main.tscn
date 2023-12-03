@@ -18,8 +18,10 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_top = 10.0
-offset_bottom = 10.0
+offset_left = -297.0
+offset_top = 7.0
+offset_right = -293.0
+offset_bottom = 9.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -30,8 +32,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -94.0
-offset_right = 94.0
-offset_bottom = 36.0
+offset_right = 15.0
+offset_bottom = 21.0
 grow_horizontal = 2
 
 [node name="RedPart1" type="TextureRect" parent="CanvasLayer/Control"]
@@ -40,8 +42,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 38.0
+offset_right = 10.0
+offset_bottom = 21.0
 grow_horizontal = 2
 scale = Vector2(0.3, 1)
 texture = ExtResource("2_ak41v")
@@ -52,9 +54,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -94.5
-offset_right = 274.5
-offset_bottom = 38.0
+offset_left = -94.0
+offset_right = 100.0
+offset_bottom = 20.0
 grow_horizontal = 2
 scale = Vector2(0.3, 1)
 texture = ExtResource("2_ak41v")
@@ -66,8 +68,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 38.0
+offset_right = 15.0
+offset_bottom = 22.0
 grow_horizontal = 2
 texture = ExtResource("2_ak41v")
 expand_mode = 1
@@ -79,8 +81,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 38.0
+offset_right = 15.0
+offset_bottom = 22.0
 grow_horizontal = 2
 texture = ExtResource("2_l2tyl")
 expand_mode = 1
@@ -90,6 +92,7 @@ expand_mode = 1
 [node name="spawn_enemy" type="Timer" parent="."]
 
 [node name="Map" parent="." instance=ExtResource("2_onldp")]
+position = Vector2(-3, 15)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_epx3o")]
 

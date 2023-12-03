@@ -99,5 +99,5 @@ theme_override_font_sizes/font_size = 11
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_reset_button_pressed"]
