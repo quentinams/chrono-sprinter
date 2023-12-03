@@ -21,7 +21,7 @@ func spawn_bullet():
 
 func spawn_enemy():
 	var new_enemy = enemy.instantiate()
-	new_enemy.global_position = Vector2(1000, randi_range(screensize.position.y, screensize.end.y))
+	new_enemy.global_position = Vector2(1000, randi_range(screensize.position.y  + 25, screensize.end.y - 25))
 	new_enemy.velocity = Vector2(randi_range(-200, -300), 0)
 	self.add_child(new_enemy)
 	pass
