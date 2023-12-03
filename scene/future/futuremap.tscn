@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d05kw030fdwse"]
 
 [ext_resource type="Script" path="res://src/map.gd" id="1_idad2"]
-[ext_resource type="Texture2D" uid="uid://b5t8fradli72n" path="res://assets/medieval_background.png" id="2_g3ern"]
+[ext_resource type="Texture2D" uid="uid://dpqk35qxll374" path="res://assets/cyberpunk_background.png" id="2_me2by"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_idad2")
@@ -15,4 +15,4 @@ motion_mirroring = Vector2(3680, 0)
 offset_right = 6144.0
 offset_bottom = 1024.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_g3ern")
+texture = ExtResource("2_me2by")

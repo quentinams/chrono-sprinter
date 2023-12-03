@@ -8,7 +8,6 @@ var player
 func _ready():
 	get_node("shoot_cooldown").start()
 	player = get_parent().get_node("Player")
-	$AnimatedSprite2D.play("default")
 	pass # Replace with function body.
 
 func shoot_player():
