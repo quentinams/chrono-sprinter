@@ -129,5 +129,10 @@ position = Vector2(-3, 15)
 
 [node name="pistolTimer" type="Timer" parent="Player"]
 
+[node name="gun_cooldown" type="Timer" parent="Player"]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
 [connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]
+[connection signal="timeout" from="Player/gun_cooldown" to="." method="_on_gun_cooldown_timeout"]

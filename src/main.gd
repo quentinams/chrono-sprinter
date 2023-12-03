@@ -42,6 +42,7 @@ func init_health_bar():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("spawn_enemy").start()
+	$Player/gun_cooldown.start()
 	init_health_bar()
 	pass # Replace with function body.
 
@@ -61,20 +62,8 @@ func spawn_enemy():
 	self.add_child(new_enemy)
 	pass
 
-
-func _process(_delta):
-	update_health_bar()
-	update_score()
-	if Input.is_action_just_pressed("player_shoot"):
-		$Player.get_node("Pistol").visible = true
-		spawn_bullet()
-		$Player/pistolTimer.start()
-		$Player.is_moving = true
-	if !$Player.is_moving:
-		get_node("spawn_enemy").wait_time = 2
-	else :
-		get_node("spawn_enemy").wait_time = 1
-	if score == 50:
+func gotopast():
+	if score == 20:
 		get_node("spawn_enemy").stop()
 		hide()
 		var past_ins = past.instantiate()
@@ -82,17 +71,38 @@ func _process(_delta):
 		past_ins.score = score
 		get_parent().add_child(past_ins)
 		queue_free()
+
+
+func _process(_delta):
+	update_health_bar()
+	update_score()
+	if Input.is_action_just_pressed("player_shoot") and $Player/gun_cooldown.time_left <= 0:
+		$Player.get_node("Pistol").visible = true
+		spawn_bullet()
+		$Player/pistolTimer.start()
+		$Player.is_moving = true
+		$Player/gun_cooldown.start()
+	if !$Player.is_moving:
+		get_node("spawn_enemy").wait_time = 2
+	else :
+		get_node("spawn_enemy").wait_time = 1
+	gotopast()
 	pass
 
 
 func _on_spawn_enemy_timeout():
 	spawn_enemy()
+	pass # Replace with functi
 	get_node("spawn_enemy").stop()
 	get_node("spawn_enemy").start()
 	pass
-
 
 func _on_pistol_timer_timeout():
 	$Player/pistolTimer.stop()
 	$Player.get_node("Pistol").visible = false
 	pass
+
+
+func _on_gun_cooldown_timeout():
+	$Player/gun_cooldown.stop()
+	pass # Replace with function body.
