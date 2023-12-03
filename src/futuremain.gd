@@ -79,7 +79,7 @@ func _process(delta):
 
 
 func _on_spawn_enemy_timeout():
-	#spawn_enemy()
+	# spawn_enemy()
 	get_node("spawn_enemy").stop()
 	get_node("spawn_enemy").start()
 	pass
