@@ -1,11 +1,17 @@
 extends Node2D
 
+var score = 0
 var enemy = preload("res://scene/enemy.tscn")
 var bullet = preload("res://scene/bulletplayer.tscn")
 @onready var screensize = get_node("Camera/Camera2D").get_viewport_rect()
-@onready var red_part1 = $CanvasLayer/Control/RedPart1
-@onready var red_part2 = $CanvasLayer/Control/RedPart2
-@onready var red_part3 = $CanvasLayer/Control/RedPart3
+@onready var red_part1 = $CanvasLayer/ControlHealth/RedPart1
+@onready var red_part2 = $CanvasLayer/ControlHealth/RedPart2
+@onready var red_part3 = $CanvasLayer/ControlHealth/RedPart3
+@onready var score_label = $CanvasLayer/ControlScore/Label
+
+func update_score():
+	score_label.text = str(score)
+	pass
 
 func update_health_bar():
 	if $Player.health == 3:
@@ -55,9 +61,9 @@ func spawn_enemy():
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_health_bar()
+	update_score()
 	if Input.is_action_just_pressed("player_shoot"):
 		$Player.get_node("Pistol").visible = true
 		spawn_bullet()
@@ -74,10 +80,10 @@ func _on_spawn_enemy_timeout():
 	spawn_enemy()
 	get_node("spawn_enemy").stop()
 	get_node("spawn_enemy").start()
-	pass # Replace with function body.
+	pass
 
 
 func _on_pistol_timer_timeout():
 	$Player/pistolTimer.stop()
 	$Player.get_node("Pistol").visible = false
-	pass # Replace with function body.
+	pass

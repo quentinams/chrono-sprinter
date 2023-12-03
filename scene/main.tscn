@@ -13,7 +13,7 @@ script = ExtResource("1_tfdf0")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="ControlHealth" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -26,7 +26,7 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Background" type="Panel" parent="CanvasLayer/Control"]
+[node name="Background" type="Panel" parent="CanvasLayer/ControlHealth"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -36,7 +36,7 @@ offset_right = 15.0
 offset_bottom = 21.0
 grow_horizontal = 2
 
-[node name="RedPart1" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="RedPart1" type="TextureRect" parent="CanvasLayer/ControlHealth"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -49,7 +49,7 @@ scale = Vector2(0.3, 1)
 texture = ExtResource("2_ak41v")
 expand_mode = 1
 
-[node name="RedPart2" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="RedPart2" type="TextureRect" parent="CanvasLayer/ControlHealth"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -62,7 +62,7 @@ scale = Vector2(0.3, 1)
 texture = ExtResource("2_ak41v")
 expand_mode = 1
 
-[node name="RedPart3" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="RedPart3" type="TextureRect" parent="CanvasLayer/ControlHealth"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -74,7 +74,7 @@ grow_horizontal = 2
 texture = ExtResource("2_ak41v")
 expand_mode = 1
 
-[node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="Border" type="TextureRect" parent="CanvasLayer/ControlHealth"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
@@ -86,6 +86,37 @@ offset_bottom = 22.0
 grow_horizontal = 2
 texture = ExtResource("2_l2tyl")
 expand_mode = 1
+
+[node name="ControlScore" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 7.0
+offset_right = 20.0
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ControlScore"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0"
+
+[node name="Border" type="TextureRect" parent="CanvasLayer/ControlScore"]
+texture_filter = 1
+layout_mode = 1
+offset_left = -28.0
+offset_right = 304.0
+offset_bottom = 110.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_l2tyl")
 
 [node name="Camera" parent="." instance=ExtResource("2_gn3qi")]
 
