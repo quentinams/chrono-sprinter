@@ -76,6 +76,8 @@ func _process(delta):
 		get_node("spawn_enemy").wait_time = 1
 	if $Player.health == 0:
 		queue_free()
+	if get_node("Past BOSS").health == 0:
+		queue_free()
 	pass
 
 

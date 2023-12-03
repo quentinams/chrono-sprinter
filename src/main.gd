@@ -63,7 +63,7 @@ func spawn_enemy():
 	pass
 
 func gotopast():
-	if score == 20:
+	if score == 100:
 		get_node("spawn_enemy").stop()
 		hide()
 		var past_ins = past.instantiate()

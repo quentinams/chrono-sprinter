@@ -1,7 +1,7 @@
 extends Area2D
 
 var health = 100
-var bullet = preload("res://scene/past/pastbullet.tscn")
+var bullet = preload("res://scene/future/futurebullet.tscn")
 var player
 
 func _ready():
