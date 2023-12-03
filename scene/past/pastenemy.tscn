@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvrwwcn52yhrw"]
 
-[ext_resource type="Script" path="res://src/enemy.gd" id="1_8um5k"]
+[ext_resource type="Script" path="res://src/pastenemy.gd" id="1_j8uj7"]
 [ext_resource type="Texture2D" uid="uid://3ystpt4hd7l1" path="res://assets/enemy/tile000.png" id="2_chjdm"]
 [ext_resource type="Texture2D" uid="uid://cxsmj1lwd01p6" path="res://assets/enemy/tile001.png" id="3_80hks"]
 
@@ -27,7 +27,7 @@ animations = [{
 size = Vector2(31.5, 35)
 
 [node name="Enemy" type="Area2D" groups=["enemy"]]
-script = ExtResource("1_8um5k")
+script = ExtResource("1_j8uj7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 texture_filter = 1
