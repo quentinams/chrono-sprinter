@@ -3,11 +3,39 @@ extends Node2D
 var enemy = preload("res://scene/enemy.tscn")
 var bullet = preload("res://scene/bulletplayer.tscn")
 @onready var screensize = get_node("Camera/Camera2D").get_viewport_rect()
+@onready var red_part1 = $CanvasLayer/Control/RedPart1
+@onready var red_part2 = $CanvasLayer/Control/RedPart2
+@onready var red_part3 = $CanvasLayer/Control/RedPart3
 
+func update_health_bar():
+	if $Player.health == 3:
+		red_part1.visible = false
+		red_part2.visible = false
+		red_part3.visible = true
+	if $Player.health == 2:
+		red_part1.visible = false
+		red_part2.visible = true
+		red_part3.visible = false
+	if $Player.health == 1:
+		red_part1.visible = true
+		red_part2.visible = false
+		red_part3.visible = false
+	if $Player.health <= 0:
+		red_part1.visible = false
+		red_part2.visible = false
+		red_part3.visible = false
+	pass
+
+func init_health_bar():
+	red_part1.visible = false
+	red_part2.visible = false
+	red_part3.visible = true
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("spawn_enemy").start()
+	init_health_bar()
 	pass # Replace with function body.
 
 
@@ -29,6 +57,7 @@ func spawn_enemy():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	update_health_bar()
 	if Input.is_action_just_pressed("player_shoot"):
 		$Player.get_node("Pistol").visible = true
 		spawn_bullet()

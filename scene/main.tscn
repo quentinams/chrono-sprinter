@@ -1,12 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1s0v33rp77xg"]
+[gd_scene load_steps=7 format=3 uid="uid://c1s0v33rp77xg"]
 
 [ext_resource type="PackedScene" uid="uid://d3n45hx0bccsb" path="res://scene/player.tscn" id="1_epx3o"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_tfdf0"]
+[ext_resource type="Texture2D" uid="uid://cumhx4wqppwbf" path="res://assets/health_full.png" id="2_ak41v"]
 [ext_resource type="PackedScene" uid="uid://b1o7qfdy8d1j3" path="res://scene/camera.tscn" id="2_gn3qi"]
+[ext_resource type="Texture2D" uid="uid://12aqnwcapx71" path="res://assets/health_empty.png" id="2_l2tyl"]
 [ext_resource type="PackedScene" uid="uid://dw274ggdpucia" path="res://scene/map.tscn" id="2_onldp"]
 
 [node name="MAIN" type="Node2D"]
 script = ExtResource("1_tfdf0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 94.0
+offset_bottom = 36.0
+grow_horizontal = 2
+
+[node name="RedPart1" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 38.0
+grow_horizontal = 2
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_ak41v")
+expand_mode = 1
+
+[node name="RedPart2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.5
+offset_right = 274.5
+offset_bottom = 38.0
+grow_horizontal = 2
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_ak41v")
+expand_mode = 1
+
+[node name="RedPart3" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 38.0
+grow_horizontal = 2
+texture = ExtResource("2_ak41v")
+expand_mode = 1
+
+[node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 38.0
+grow_horizontal = 2
+texture = ExtResource("2_l2tyl")
+expand_mode = 1
 
 [node name="Camera" parent="." instance=ExtResource("2_gn3qi")]
 
