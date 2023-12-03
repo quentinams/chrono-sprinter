@@ -44,21 +44,21 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ControleButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../ExitButton")
-text = "Control"
-
 [node name="volume_slider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
 max_value = 1.0
 step = 0.001
 
+[node name="ControleButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../ControleButton")
-text = "Exit"
+focus_neighbor_bottom = NodePath("../volume_slider")
+text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/ControleButton" to="." method="_on_controle_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/ControleButton" to="." method="_on_controle_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

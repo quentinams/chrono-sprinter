@@ -9,7 +9,7 @@ var bus_index: int
 func _ready():
 	$AudioStreamPlayer.play()
 	bus_index = AudioServer.get_bus_index("Master")
-	$VBoxContainer/ControleButton.grab_focus()
+	$VBoxContainer/volume_slider.grab_focus()
 	$VBoxContainer/volume_slider.value = 1
 
 var scroll_x = 0

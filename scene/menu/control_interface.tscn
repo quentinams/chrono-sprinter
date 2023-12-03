@@ -67,7 +67,6 @@ size_flags_horizontal = 3
 
 [node name="InputButton" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ActionList" instance=ExtResource("3_263dx")]
 layout_mode = 2
-focus_neighbor_top = NodePath("../../ExitButton")
 
 [node name="InputButton2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ActionList" instance=ExtResource("3_263dx")]
 layout_mode = 2
@@ -94,12 +93,11 @@ text = "reset to default"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../ActionList/InputButton")
 focus_mode = 0
 theme_override_fonts/font = ExtResource("4_el1ko")
 theme_override_font_sizes/font_size = 11
 button_mask = 3
-text = "Exit"
+text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_reset_button_pressed"]
