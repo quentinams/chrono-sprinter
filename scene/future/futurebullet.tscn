@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjewubcn85d1c"]
+
+[ext_resource type="Script" path="res://src/bullet.gd" id="1_rtd41"]
+[ext_resource type="Texture2D" uid="uid://cg78slbyo4la8" path="res://assets/weapons/lance.png" id="2_ur6ro"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qy0pq"]
+radius = 2.66667
+height = 17.3333
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_rtd41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ur6ro")
+centered = false
+offset = Vector2(-40, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2.66454e-15)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_qy0pq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

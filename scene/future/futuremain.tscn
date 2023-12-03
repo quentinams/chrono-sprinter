@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://dobrbqpsp6dln"]
+
+[ext_resource type="Script" path="res://src/pastmain.gd" id="1_iabi6"]
+[ext_resource type="Texture2D" uid="uid://cumhx4wqppwbf" path="res://assets/health_full.png" id="2_k61vt"]
+[ext_resource type="Texture2D" uid="uid://12aqnwcapx71" path="res://assets/health_empty.png" id="3_me7ch"]
+[ext_resource type="PackedScene" uid="uid://b1o7qfdy8d1j3" path="res://scene/camera.tscn" id="4_7nlep"]
+[ext_resource type="PackedScene" uid="uid://d3n45hx0bccsb" path="res://scene/player.tscn" id="5_ovstr"]
+[ext_resource type="PackedScene" uid="uid://cuh1stvoquf2p" path="res://scene/past/pastmap.tscn" id="6_dfqij"]
+[ext_resource type="PackedScene" uid="uid://b6vrsxlxt3ja0" path="res://scene/past/past_boss.tscn" id="7_cxk5o"]
+
+[node name="PASTMAIN" type="Node2D"]
+script = ExtResource("1_iabi6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ControlHealth" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -297.0
+offset_top = 7.0
+offset_right = -293.0
+offset_bottom = 9.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="Panel" parent="CanvasLayer/ControlHealth"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 15.0
+offset_bottom = 21.0
+grow_horizontal = 2
+
+[node name="RedPart1" type="TextureRect" parent="CanvasLayer/ControlHealth"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 10.0
+offset_bottom = 21.0
+grow_horizontal = 2
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_k61vt")
+expand_mode = 1
+
+[node name="RedPart2" type="TextureRect" parent="CanvasLayer/ControlHealth"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_k61vt")
+expand_mode = 1
+
+[node name="RedPart3" type="TextureRect" parent="CanvasLayer/ControlHealth"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 15.0
+offset_bottom = 22.0
+grow_horizontal = 2
+texture = ExtResource("2_k61vt")
+expand_mode = 1
+
+[node name="Border" type="TextureRect" parent="CanvasLayer/ControlHealth"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 15.0
+offset_bottom = 22.0
+grow_horizontal = 2
+texture = ExtResource("3_me7ch")
+expand_mode = 1
+
+[node name="ControlScore" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 7.0
+offset_right = 20.0
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ControlScore"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0"
+
+[node name="Border" type="TextureRect" parent="CanvasLayer/ControlScore"]
+texture_filter = 1
+layout_mode = 1
+offset_left = -26.0
+offset_right = 180.0
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_me7ch")
+
+[node name="Camera" parent="." instance=ExtResource("4_7nlep")]
+
+[node name="spawn_enemy" type="Timer" parent="."]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("5_ovstr")]
+
+[node name="pistolTimer" type="Timer" parent="Player"]
+
+[node name="Map" parent="." instance=ExtResource("6_dfqij")]
+position = Vector2(519.745, 45.5992)
+
+[node name="Past BOSS" parent="." instance=ExtResource("7_cxk5o")]
+position = Vector2(637, 414)
+scale = Vector2(-3, 3)
+
+[node name="shoot_cooldown" type="Timer" parent="Past BOSS"]
+
+[node name="health" type="ProgressBar" parent="."]
+offset_left = 458.0
+offset_top = 13.0
+offset_right = 792.0
+offset_bottom = 40.0
+value = 100.0
+
+[connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
+[connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]
+[connection signal="timeout" from="Past BOSS/shoot_cooldown" to="Past BOSS" method="_on_shoot_cooldown_timeout"]
