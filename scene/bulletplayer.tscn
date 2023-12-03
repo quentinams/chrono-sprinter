@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn3n6jlh3m1ux"]
+[gd_scene load_steps=4 format=3 uid="uid://bsrokjwmpaen2"]
 
-[ext_resource type="Script" path="res://src/bullet.gd" id="1_nu4cg"]
-[ext_resource type="Texture2D" uid="uid://nq4whxxrtpmu" path="res://assets/weapons/bullet.png" id="2_vo10e"]
+[ext_resource type="Script" path="res://src/bulletplayer.gd" id="1_mytmy"]
+[ext_resource type="Texture2D" uid="uid://nq4whxxrtpmu" path="res://assets/weapons/bullet.png" id="2_iqskf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qy0pq"]
 radius = 2.66667
 height = 17.3333
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_nu4cg")
+script = ExtResource("1_mytmy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_vo10e")
+texture = ExtResource("2_iqskf")
 centered = false
 offset = Vector2(-8, -4)
 

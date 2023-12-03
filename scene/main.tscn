@@ -14,6 +14,9 @@ script = ExtResource("1_tfdf0")
 
 [node name="Map" parent="." instance=ExtResource("2_onldp")]
 
-[node name="Player" parent="." instance=ExtResource("1_epx3o")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_epx3o")]
+
+[node name="pistolTimer" type="Timer" parent="Player"]
 
 [connection signal="timeout" from="spawn_enemy" to="." method="_on_spawn_enemy_timeout"]
+[connection signal="timeout" from="Player/pistolTimer" to="." method="_on_pistol_timer_timeout"]

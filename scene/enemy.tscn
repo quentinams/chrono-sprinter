@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh108j2p1pnqo"]
+[gd_scene load_steps=6 format=3 uid="uid://dh108j2p1pnqo"]
 
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_5o108"]
 [ext_resource type="Texture2D" uid="uid://3ystpt4hd7l1" path="res://assets/enemy/tile000.png" id="2_taoy3"]
@@ -6,6 +6,11 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ufr1g"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_taoy3")
@@ -18,14 +23,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Enemy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h602"]
+size = Vector2(31.5, 35)
+
+[node name="Enemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_5o108")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ufr1g")
 
-[node name="shoot_cooldown" type="Timer" parent="."]
-wait_time = 0.5
+[node name="shoot_cooldown" type="Timer" parent="." groups=["enemy"]]
+
+[node name="enemyhitbox" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(-0.25, -5.5)
+shape = SubResource("RectangleShape2D_8h602")
 
 [connection signal="timeout" from="shoot_cooldown" to="." method="_on_shoot_cooldown_timeout"]
